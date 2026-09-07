@@ -1,0 +1,1 @@
+https://crates.io/crates/static_assertions_next

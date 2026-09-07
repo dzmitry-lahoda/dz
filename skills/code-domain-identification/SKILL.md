@@ -54,6 +54,10 @@ Idenfity components which allow implemented featurues to function
 Idenfity how strict are strandarts of compoennts,
 more stict and more dependable.
 
+## Ooutput
+
+Anlasis, to be loaded into later contxts
+
 ## Effort
 
 

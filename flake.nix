@@ -37,6 +37,7 @@
               pkgs.uv
               pkgs.python314Packages.sqlglot
               pkgs.sqruff
+              pkgs.secretspec
               unstablePkgs.squawk
               pkgs.git
               pkgs.ripgrep

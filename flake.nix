@@ -5,9 +5,11 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     codegraph.url = "github:dzmitry-lahoda-forks/codegraph/codex/add-nix-flake";
+    trailmark.url = "github:trailofbits/trailmark/main";
+    mewt.url = "github:trailofbits/mewt/main";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, codegraph, ... }:
+  outputs = { nixpkgs, nixpkgs-unstable, codegraph, trailmark, mewt, ... }:
     let
       supportedSystems = [
         "aarch64-darwin"
@@ -18,7 +20,10 @@
     {
       devShells = forAllSystems (system:
         let
-          pkgs = import nixpkgs { inherit system; };
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfreePredicate = pkg: nixpkgs.lib.getName pkg == "codeql";
+          };
           unstablePkgs = import nixpkgs-unstable { inherit system; };
         in
         {
@@ -26,6 +31,7 @@
             packages = [
               pkgs.bashInteractive
               codegraph.packages.${system}.default
+              pkgs.codeql
               pkgs.postgresql
               pkgs.python3
               pkgs.uv
@@ -36,6 +42,8 @@
               pkgs.ripgrep
               pkgs.jujutsu
               pkgs.eza
+              trailmark.packages.${system}.default
+              mewt.packages.${system}.default
             ];
           };
         });

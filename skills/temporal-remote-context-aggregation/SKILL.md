@@ -17,26 +17,29 @@ Collect whichever sources are available:
 - Issue tracker links, project-management task IDs, design docs, incident links, or Slack/email references.
 - CI run links and failure summaries.
 - The review objective and any suspected risk areas.
+- The caller's artifact directory, pinned review revision, existing change context, and current failure policy.
 
-Do not block on missing sources. Record gaps explicitly.
+Reuse sources already collected by the coordinator. Record optional missing sources as gaps. Required source or access failures follow the caller's policy: stop dependent work in stop mode; record and attempt only authorized recovery in recovery mode.
 
 ## Procedure
 
 1. Identify the canonical review object: PR, branch, commit range, or issue.
 2. Read the title, description, linked issues, labels, requested reviewers, and changed-file summary.
-3. Read review threads and comments in chronological order. Separate resolved discussion from unresolved action.
+3. Read the PR discussion, submitted review bodies, and inline review threads including author replies, in chronological order. Use the installed GitHub CLI or repository-supported tooling and consume all pages. Preserve source links or IDs, authors, timestamps, thread relationships, and available commit, resolution, and outdated status. Record retrieval gaps rather than treating a partial page as complete history.
 4. Follow only links that affect the review decision: design rationale, bug reports, incident notes, schema docs, rollout plans, and CI failures.
-5. Extract claims that must be checked against code or runtime evidence.
-6. Emit a small context bundle into the active working directory.
+5. Extract claims that must be checked against code or runtime evidence. For author responses, preserve the original objection and the reply's concrete claim; identify the code revision to which each applies. Thread resolution is discussion state, not proof that a claim is correct.
+6. Emit a small context bundle into the caller's artifact directory, separate from the reviewed checkout. If invoked independently, choose and record a task-specific output directory before writing. Give each output one writer when agents run concurrently.
 
 ## Output Files
 
-Write these files when the workflow has a working directory:
+Write these files under that output directory:
 
 - `remote-context.md`: concise chronological summary.
-- `review-claims.md`: claims to verify, each with source link or source label.
+- `review-claims.md`: claims to verify, including author responses, each with source, relevant revision, evidence needed, and initial `unresolved` status.
 - `open-questions.md`: missing context, ambiguous requirements, and access gaps.
 - `remote-tasks.md`: action items already requested by humans.
+
+Pass all four artifact paths to code-context construction and final verification. Verification updates each material claim to `supported`, `contradicted`, or `unresolved`, citing loaded code context and exact code/test evidence. Distinguish behavior at the comment's revision from behavior at the reviewed head. Do not present unperformed verification as a verdict.
 
 ## Summary Format
 

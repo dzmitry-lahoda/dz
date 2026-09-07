@@ -39,6 +39,9 @@
               pkgs.python314Packages.sqlglot
               pkgs.sqruff
               pkgs.secretspec
+              pkgs.jdk17_headless
+              pkgs.nodejs_22
+              pkgs.quint
               unstablePkgs.squawk
               pkgs.git
               pkgs.ripgrep

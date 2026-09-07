@@ -1,70 +1,42 @@
+---
+name: code-domain-identification
+description: Identify a change's software type, domain, feature flow, and supporting components so reviewers can focus on the right risks.
+---
 
-#
+# Code domain context
 
-Input 
+Use the target checkout and the caller's context files. Reuse existing remote, review, and temporal context. Ask the coordinator for missing remote data; do not repeat the same request in every review pass.
 
-## Types
+## Identify the change
 
-Library — reusable APIs imported by other code
-Framework — provides structure and controls application flow
-Tooling — compilers, linters, generators, CLIs, build tools
-Application — end-user software
-Service — backend, API, daemon, or distributed-system component
-Infrastructure — deployment, networking, observability, CI/CD
-Research / prototype — experimental code for testing ideas
-SDK / integration — client bindings and adapters for another system
+- Classify each changed component as a library, framework, tool, application, service, infrastructure, prototype, SDK, or integration. A change can have more than one type.
+- Identify the business or technical domain.
+- Find the rules that apply to the change in specifications, documentation, tests, and source.
+- Separate documented requirements, observed behavior, and inferred expectations. An inference alone does not prove a bug.
 
-## Domain
+## Map behavior
 
-Idenfity bizness domain and typlical rules in that domain
+- Trace the feature from input to output.
+- List the components, interfaces, runtime dependencies, and state transitions involved.
+- Check interactions with nearby features and shared data.
+- Record security, safety, correctness, and liveness requirements.
+- State failure behavior and the consequence of breaking each important invariant.
+- Mark uncertain assumptions and the evidence needed to resolve them.
 
-- financeial
-- crypto
-- database
-- healthcare
-- e-commerce
-- education
-- entertainment
-- logistics
-- real estate
-- social media
-- transportation
-- manufacturing
-- energy
-- telecommunications
-- government
-- automotive
-- aerospace
-- defense
-- agriculture
-- media
-- entertainment
-- ...
+## Scope the review
 
-## Vertical
+Choose review passes from the mapped risks. Use one focused pass for a simple change. For a complex change, inspect more code or reuse temporal context only when it can change a review decision. Stop when more context will not affect the result.
 
-Idenfigy features and capabilities of the code to determine what code can do e2e.
+Honor the coordinator's failure policy. Stop on required missing context or failed access when the policy requires it. Record optional gaps instead of hiding them.
 
-## Componnts
+## Output
 
-Idenfity components which allow implemented featurues to function
+Write `code-domain-identification.md` in the caller's artifact directory. Include:
 
-## Security and Liveness
+- Input artifact paths and reviewed revision.
+- Software and domain classifications.
+- Feature flow and component relationships.
+- Relevant requirements, assumptions, and evidence.
+- Risks and review passes selected because of them.
 
-Idenfity how strict are strandarts of compoennts,
-more stict and more dependable.
-
-## Ooutput
-
-Anlasis, to be loaded into later contxts
-
-## Effort
-
-
-### Low effort
-
-- one pass
-
-## High Effort
-- recursively tune and understand in several passes
-- use `temporal-remote-context-aggregation` as input 
+Keep the report short enough for every focused reviewer to read.

@@ -1,3 +1,4 @@
+This is mirror of dzmitry day to day work and life.
 
 - roles are split out of agents
 - agent is in role which uses set of skills to orchestrate set of worker subagents

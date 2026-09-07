@@ -118,10 +118,10 @@ You MUST NOT execute these passes yourself. You MUST use the `invoke_subagent` t
 
 Load these skills:
 
-1. `audit-context-building`: `https://github.com/trailofbits/skills/tree/main/plugins/audit-context-building`
-2. `differential-review`: `https://github.com/trailofbits/skills/tree/main/plugins/differential-review`
-3. `trailmark-structural`: `https://github.com/trailofbits/skills/tree/main/plugins/trailmark/skills/trailmark-structural`
-4. `temporal-remote-context-aggregation`: `../../skills/temporal-remote-context-aggregation`
+1. `audit-context-building`: 
+2. `differential-review`:
+3. `trailmark-structural`:
+4. `temporal-remote-context-aggregation`
 
 Tasks:
 

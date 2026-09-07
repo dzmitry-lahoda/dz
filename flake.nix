@@ -5,7 +5,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     codegraph.url = "github:dzmitry-lahoda-forks/codegraph/codex/add-nix-flake";
-    trailmark.url = "github:trailofbits/trailmark/main";
+    codegraph.inputs.nixpkgs.follows = "nixpkgs";
+    trailmark.url = "github:trailofbits/trailmark/pull/75/head";
     mewt.url = "github:trailofbits/mewt/main";
   };
 
@@ -45,6 +46,7 @@
               pkgs.eza
               trailmark.packages.${system}.default
               mewt.packages.${system}.default
+              pkgs.tree-sitter-grammars.tree-sitter-sql
             ];
           };
         });

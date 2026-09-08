@@ -34,9 +34,8 @@
               codegraph.packages.${system}.default
               pkgs.codeql
               pkgs.postgresql
-              pkgs.python3
+              trailmark.packages.${system}.default
               pkgs.uv
-              pkgs.python314Packages.sqlglot
               pkgs.sqruff
               pkgs.secretspec
               pkgs.jdk17_headless
@@ -47,9 +46,7 @@
               pkgs.ripgrep
               pkgs.jujutsu
               pkgs.eza
-              trailmark.packages.${system}.default
               mewt.packages.${system}.default
-              pkgs.tree-sitter-grammars.tree-sitter-sql
             ];
           };
         });

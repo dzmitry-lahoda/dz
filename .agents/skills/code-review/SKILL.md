@@ -32,7 +32,6 @@ This skill may identify pre-existing issues when the reviewed change makes them 
 
 Each run must produce review artifacts under `/tmp/n1/<repo-name>-pr-issues-review/<target>-<timestamp>/`, where `<target>` is a filesystem-safe name such as `pr-2785` and `<timestamp>` is UTC in `YYYYMMDDTHHMMSSZ` form. Include at least these files:
 
-- `remote-skills.md`: required and selected skill names, source URLs, validation or download method, status, and blockers.
 - `change-context.md`: target metadata, base and head refs, changed files, commits, review comments, CI state, fetched local refs, and diff summary.
 - `code-context.md`: changed entry points, affected call paths, invariants, related tests, runtime dependencies, blast radius, and unresolved context gaps.
 - `verification-notes.md`: selected passes, verification commands or reasoning, reproduced issues, skipped checks, blockers, and subagent usage.
@@ -201,6 +200,7 @@ Load files of context from previous steps to enhace each review step.
 - **Inputs:** Contributor identity (default to the PR author and state that inference), exact calendar window, pinned revisions, shared context, author claims, and current review results. Do not count someone repairing a defect as the person who introduced it.
 - **Execution:** With authorized delegation, assign a bounded history subagent while independent verification/reporting continues. Inventory activity in the window, including older PRs, then inspect an explicitly reported subset. Require two independent, attributed erroneous changes before calling a category recurring; deduplicate copied/stacked changes. Verify every proposed current issue from current source and merge duplicates into the existing findings.
 - **Outputs:** `author-history.md`, raw evidence in `author-history/`, and `subagents/author-history-review.md`. Record inventory versus deep-review coverage and uncertainty; do not infer character or competence from code corrections.
+
 
 ### 7. Verify Findings
 

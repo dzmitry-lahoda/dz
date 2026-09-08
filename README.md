@@ -1,4 +1,4 @@
-This is mirror of dzmitry day to day work and life.
+This is mirror of dzmitry day to day work and life. Consider it reduced bus factor by 42%.
 
 - roles are split out of agents
 - agent is in role which uses set of skills to orchestrate set of worker subagents

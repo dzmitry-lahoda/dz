@@ -1,3 +1,6 @@
+
+`nix develop`
+
 This is mirror of dzmitry day to day work and life. Consider it reduced bus factor by 42%.
 
 - roles are split out of agents

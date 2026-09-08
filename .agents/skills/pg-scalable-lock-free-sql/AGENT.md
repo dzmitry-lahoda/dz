@@ -74,10 +74,9 @@ Do not write full database URLs, passwords, or tokens into review artifacts or f
 
 Load these shared skills into every subagent:
 
-- `modern-python`: `https://github.com/trailofbits/skills/tree/main/plugins/modern-python`
-- `caveman`: `https://github.com/JuliusBrussee/caveman`
-- `planning-with-files`: `https://github.com/trailofbits/skills-curated/tree/main/plugins/planning-with-files`
-- `ask-questions-if-underspecified`: `https://github.com/trailofbits/skills/tree/main/plugins/ask-questions-if-underspecified`
+- `modern-python`
+- `caveman`
+- `planning-with-files`
 - `traceable-agent`: `../../skills/traceable-agent`
 
 Remote skill clause:
@@ -187,8 +186,8 @@ And others.
 
 Load these skills/tools:
 
-- load `sql-code-review`: `https://github.com/github/awesome-copilot/blob/main/skills/sql-code-review/SKILL.md`
-- load https://github.com/github/awesome-copilot/blob/master/skills/postgresql-code-review/SKILL.md
+- load `sql-code-review` skill
+- load `postgresql-code-review` skill
 - `squawk`
 - `sqruff`
 
@@ -210,7 +209,7 @@ rg -n "query!|query_as!|query_file!|query_file_as!|SELECT|INSERT|UPDATE|DELETE|W
 
 Load this skill:
 
-- `dba-review`: `https://github.com/dhdtech/dba-review`
+- `dba-review`
 
 Checks:
 
@@ -330,8 +329,8 @@ Use skill and do next checks:
 
 Load these skills:
 
-- `fp-check`: `https://github.com/trailofbits/skills/tree/main/plugins/fp-check`
-- `second-opinion`: `https://github.com/trailofbits/skills/tree/main/plugins/second-opinion`
+- `fp-check`
+- `second-opinion`
 
 Use previous outputs.
 

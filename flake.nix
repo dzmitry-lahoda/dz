@@ -47,6 +47,8 @@
               pkgs.jujutsu
               pkgs.eza
               mewt.packages.${system}.default
+              nixpkgs-unstable.bun
+              nixpkgs-unstable.apm-cli
             ];
           };
         });

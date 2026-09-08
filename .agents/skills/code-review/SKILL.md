@@ -137,7 +137,7 @@ Load files of context from previous steps to enhace each review step.
 #### Dependency and Vendor Review
 
 - **Trigger:** Changed lockfiles, `*.nix`, `Cargo.toml`, dependency configuration, vendored code, or increased use of existing dependencies.
-- **Skill:** `supply-chain-risk-auditor`
+- **Skill:** `rust-review` for Rust codebase and  `supply-chain-risk-auditor` for other dependencies
 - **Focus:** Supply-chain risk, unexpected dependency changes, version drift, and build reproducibility.
 
 #### Specification Compliance

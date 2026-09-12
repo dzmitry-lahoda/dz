@@ -62,45 +62,48 @@
         inherit (skillConfig) sources skills;
         catalog = { };
       };
-      localTargets = {
-        codex = agentLib.defaultLocalTargets.codex // { enable = true; };
-        claude = agentLib.defaultLocalTargets.claude // { enable = true; structure = "link"; };
-      };
       skillBundle = system: agentLib.mkBundle {
         pkgs = nixpkgs.legacyPackages.${system};
         inherit selection;
       };
 
-      # Manage individual Antigravity entries so repository-owned skills remain intact.
-      skillsInstaller = system:
+      mkSkillInstaller = { pkgs, target }:
         let
-          pkgs = nixpkgs.legacyPackages.${system};
-          bundle = skillBundle system;
-          sharedInstaller = agentLib.mkSyncProgram {
-            mode = "local";
-            programName = "skills-install-local";
-            inherit pkgs bundle;
-            targets = localTargets;
-          };
-          agyInstallers = nixpkgs.lib.mapAttrsToList (name: _:
+          bundle = skillBundle pkgs.system;
+        in
+          if target == "codex" then
             agentLib.mkSyncProgram {
               mode = "local";
-              programName = "skills-install-local";
-              inherit pkgs;
-              bundle = "${bundle}/${name}";
-              targets.antigravity = {
-                enable = true;
-                dest = ".agents/skills/${name}";
-                structure = "link";
+              programName = "skills-install-codex";
+              inherit pkgs bundle;
+              targets = {
+                codex = agentLib.defaultLocalTargets.codex // { enable = true; };
               };
             }
-          ) selection;
-        in pkgs.writeShellApplication {
-          name = "skills-install-local";
-          text = nixpkgs.lib.concatMapStringsSep "\n"
-            (installer: "${installer}/bin/skills-install-local")
-            ([ sharedInstaller ] ++ agyInstallers);
-        };
+          else if target == "agy" then
+            let
+              agyInstallers = nixpkgs.lib.mapAttrsToList (name: _:
+                agentLib.mkSyncProgram {
+                  mode = "local";
+                  programName = "skills-install-agy-${name}";
+                  inherit pkgs;
+                  bundle = "${bundle}/${name}";
+                  targets.antigravity = {
+                    enable = true;
+                    dest = ".agents/skills/${name}";
+                    structure = "link";
+                  };
+                }
+              ) selection;
+            in
+              pkgs.writeShellApplication {
+                name = "skills-install-agy";
+                text = nixpkgs.lib.concatMapStringsSep "\n"
+                  (installer: "${installer}/bin/${installer.name}")
+                  agyInstallers;
+              }
+          else
+            throw "Unknown target: ${target}";
 
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
     in
@@ -111,12 +114,20 @@
       checks = forAllSystems (system: {
         skills = skillBundle system;
       });
-      apps = forAllSystems (system: {
-        skills-install-local = {
-          type = "app";
-          program = "${skillsInstaller system}/bin/skills-install-local";
-        };
-      });
+      apps = forAllSystems (system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        {
+          skills-install-codex = {
+            type = "app";
+            program = "${mkSkillInstaller { inherit pkgs; target = "codex"; }}/bin/skills-install-codex";
+          };
+          skills-install-agy = {
+            type = "app";
+            program = "${mkSkillInstaller { inherit pkgs; target = "agy"; }}/bin/skills-install-agy";
+          };
+        });
       devShells = forAllSystems (system:
         let
           pkgs = import nixpkgs {
@@ -124,32 +135,36 @@
             config.allowUnfreePredicate = pkg: nixpkgs.lib.getName pkg == "codeql";
           };
           unstablePkgs = import nixpkgs-unstable { inherit system; };
-        in
-        {
-          default = pkgs.mkShell {
-            shellHook = "${skillsInstaller system}/bin/skills-install-local";
-            packages = [
-              pkgs.bashInteractive
-              codegraph.packages.${system}.default
-              pkgs.codeql
-              pkgs.postgresql
-              trailmark.packages.${system}.default
-              pkgs.uv
-              pkgs.sqruff
-              pkgs.secretspec
-              pkgs.jdk17_headless
-              pkgs.nodejs_22
-              pkgs.quint
-              unstablePkgs.squawk
-              pkgs.git
-              pkgs.ripgrep
-              pkgs.jujutsu
-              pkgs.eza
-              mewt.packages.${system}.default
-              unstablePkgs.bun
-              unstablePkgs.apm-cli
-            ];
+          commonPackages = [
+            pkgs.bashInteractive
+            codegraph.packages.${system}.default
+            pkgs.codeql
+            pkgs.postgresql
+            trailmark.packages.${system}.default
+            pkgs.uv
+            pkgs.sqruff
+            pkgs.secretspec
+            pkgs.jdk17_headless
+            pkgs.nodejs_22
+            pkgs.quint
+            unstablePkgs.squawk
+            pkgs.git
+            pkgs.ripgrep
+            pkgs.jujutsu
+            pkgs.eza
+            mewt.packages.${system}.default
+            unstablePkgs.bun
+            unstablePkgs.apm-cli
+          ];
+          mkAgentShell = target: pkgs.mkShell {
+            shellHook = "${mkSkillInstaller { inherit pkgs; inherit target; }}/bin/skills-install-${target}";
+            packages = commonPackages;
           };
+        in
+        rec {
+          default = agy;
+          codex = mkAgentShell "codex";
+          agy = mkAgentShell "agy";
         });
     };
 }

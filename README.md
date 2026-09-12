@@ -1,7 +1,6 @@
-
-`nix develop`
-
-This is mirror of dzmitry day to day work and life. Consider it reduced bus factor by 42%.
+- `nix develop .#codex`
+- `nix develop .#agy` (or `nix develop`)
+This is mirror of `dz`mitry day to day work and life. Consider it reduces bus factor by 42%.
 
 - roles are split out of agents
 - agent is in role which uses set of skills to orchestrate set of worker subagents

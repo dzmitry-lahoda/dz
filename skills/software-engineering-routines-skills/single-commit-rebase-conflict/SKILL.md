@@ -40,6 +40,7 @@ in this case ask for confirm
   created which can shortcut impl of current branch? less code
 
 - lock files just use earlier
+- express If the correct conflict resolution is unclear, stop and ask a targeted question. Do not invent product behavior.
 
 - output whole plan and wait for apporival
 

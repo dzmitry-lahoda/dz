@@ -7,7 +7,7 @@ Allow me to resolve issues or agree to proceed with known hiccup.
 Run with high+ thinking effort on frontier model.
 I allow total run under 1 hours.
 And subruns per agent to be 15 minutes.
-In case of external failures (like networking failures), retrun several times as needed.
+In case of external failures (like networking failures), retrun several times as needed.nix
 
 
 # How to use

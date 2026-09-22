@@ -1,6 +1,6 @@
 ---
 name: conservative-weighted-code-reuse
-description: Use when reviewing or editing pull/merge/patch requests for code reuse opportunities, especially duplicated or near-duplicated production code or reusable test infrastructure. Applies conservative DRY judgment: suggest extraction only when reuse is actionable, lowers total complexity, and preserves typed, named intent.
+description: Use when generating code and reviewing/editing pull/merge/patch requests for code reuse opportunities, especially duplicated or near-duplicated production code or reusable test infrastructure. Applies conservative DRY judgment: suggest extraction only when reuse is actionable, lowers total complexity, and preserves typed, named intent.
 ---
 
 # Conservative Weighted Code Reuse

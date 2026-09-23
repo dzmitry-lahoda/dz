@@ -27,6 +27,7 @@
     fp-check = { from = "trailofbits-skills"; path = "plugins/fp-check/skills/fp-check"; };
     genotoxic = { from = "trailofbits-skills"; path = "plugins/trailmark/skills/genotoxic"; };
     graph-evolution = { from = "trailofbits-skills"; path = "plugins/trailmark/skills/graph-evolution"; };
+    guidelines-advisor = { from = "trailofbits-skills"; path = "plugins/building-secure-contracts/skills/guidelines-advisor"; };
     i-have-adhd = { from = "i-have-adhd"; path = "skills/i-have-adhd"; };
     mermaid-to-proverif = { from = "trailofbits-skills"; path = "plugins/trailmark/skills/mermaid-to-proverif"; };
     modern-python = { from = "trailofbits-skills"; path = "plugins/modern-python/skills/modern-python"; };

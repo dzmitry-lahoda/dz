@@ -193,6 +193,10 @@ Load files of context from previous steps to enhace each review step.
 - Rads and depends on `code-domain-identification.md` output.
 - Uses the domain and component information to guide focused review passes.
 
+#### Domain Guidelines Advisor
+
+Run `domain-guidelines-advisor` if current domain is relevant for avialsble option
+
 #### Author History and Recurring Errors
 
 - **Trigger:** The caller asks to review a contributor's past work, categorize repeated errors, or search the current change for earlier failure patterns.
@@ -201,6 +205,7 @@ Load files of context from previous steps to enhace each review step.
 - **Execution:** With authorized delegation, assign a bounded history subagent while independent verification/reporting continues. Inventory activity in the window, including older PRs, then inspect an explicitly reported subset. Require two independent, attributed erroneous changes before calling a category recurring; deduplicate copied/stacked changes. Verify every proposed current issue from current source and merge duplicates into the existing findings.
 - **Outputs:** `author-history.md`, raw evidence in `author-history/`, and `subagents/author-history-review.md`. Record inventory versus deep-review coverage and uncertainty; do not infer character or competence from code corrections.
 
+####
 
 ### 7. Verify Findings
 

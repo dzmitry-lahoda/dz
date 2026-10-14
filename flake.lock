@@ -225,6 +225,23 @@
         "type": "github"
       }
     },
+    "luckys-agent-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1791925570,
+        "narHash": "sha256-Tr2OG3rJ5CCXEod6CHrx0Sa3YZRU/SdNmoj8r203ZUs=",
+        "owner": "luckys",
+        "repo": "agent-skills",
+        "rev": "8a36591aa9cc75cb5eabe73178b846a343c1fedf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "luckys",
+        "repo": "agent-skills",
+        "rev": "8a36591aa9cc75cb5eabe73178b846a343c1fedf",
+        "type": "github"
+      }
+    },
     "mewt": {
       "inputs": {
         "crane": "crane",
@@ -371,6 +388,7 @@
         "codegraph": "codegraph",
         "dba-review": "dba-review",
         "i-have-adhd": "i-have-adhd",
+        "luckys-agent-skills": "luckys-agent-skills",
         "mewt": "mewt",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable",

@@ -35,6 +35,10 @@
       url = "github:ayghri/i-have-adhd/58494af57962b2d7a996b4d419474380a299af5e";
       flake = false;
     };
+    luckys-agent-skills = {
+      url = "github:luckys/agent-skills/8a36591aa9cc75cb5eabe73178b846a343c1fedf";
+      flake = false;
+    };
     trailofbits-skills = {
       url = "github:trailofbits/skills/d3323cefbcf645678b8dc481de204b02ad3d02dc";
       flake = false;

@@ -8,6 +8,7 @@
     caveman.path = inputs.caveman;
     dba-review.path = inputs.dba-review;
     i-have-adhd.path = inputs.i-have-adhd;
+    luckys-agent-skills.path = inputs.luckys-agent-skills;
     trailofbits-skills.path = inputs.trailofbits-skills;
     trailofbits-skills-curated.path = inputs.trailofbits-skills-curated;
     wshobson-agents.path = inputs.wshobson-agents;
@@ -25,6 +26,7 @@
     differential-review = { from = "trailofbits-skills"; path = "plugins/differential-review/skills/differential-review"; };
     dimensional-analysis = { from = "trailofbits-skills"; path = "plugins/dimensional-analysis/skills/dimensional-analysis"; };
     fp-check = { from = "trailofbits-skills"; path = "plugins/fp-check/skills/fp-check"; };
+    fp-best-practices = { from = "luckys-agent-skills"; path = "skills/fp-best-practices"; };
     genotoxic = { from = "trailofbits-skills"; path = "plugins/trailmark/skills/genotoxic"; };
     graph-evolution = { from = "trailofbits-skills"; path = "plugins/trailmark/skills/graph-evolution"; };
     guidelines-advisor = { from = "trailofbits-skills"; path = "plugins/building-secure-contracts/skills/guidelines-advisor"; };
@@ -38,6 +40,7 @@
     postgresql-code-review = { from = "awesome-copilot"; path = "skills/postgresql-code-review"; };
     postgresql-optimization = { from = "awesome-copilot"; path = "skills/postgresql-optimization"; };
     property-based-testing = { from = "trailofbits-skills"; path = "plugins/property-based-testing/skills/property-based-testing"; };
+    rest-api-best-practices = { from = "luckys-agent-skills"; path = "skills/rest-api-best-practices"; };
     rust-review = { from = "trailofbits-skills"; path = "plugins/rust-review/skills/rust-review"; };
     second-opinion = { from = "trailofbits-skills"; path = "plugins/second-opinion/skills/second-opinion"; };
     slicing-code-context = { from = "trailofbits-skills"; path = "plugins/trailmark/skills/slicing-code-context"; };

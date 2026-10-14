@@ -1,5 +1,5 @@
 ---
-name: code-review
+name: implementatation-review
 description: Coordinate automated code review of pull requests, branches, commits, or diffs by selecting relevant review skills, collecting repository and change context, running focused subagents when delegation is allowed, and returning prioritized findings. Use when the user asks to "review PR", "code review branch", "code review commit", "review pull request", review a GitHub PR, inspect a branch before merge, or audit a commit range for correctness, security, tests, and maintainability.
 ---
 
@@ -20,7 +20,8 @@ This skill may identify pre-existing issues when the reviewed change makes them 
 
 ## When not to use
 
-- General code quality review without a specific diff, branch, commit, or pull request.
+- General code quality review
+- No specific specific diff, branch, commit, or pull request.
 - Automatic fixes for CI failures or GitHub review comments.
 - Broad searches for pre-existing issues unrelated to the reviewed change.
 - Implementing fixes. Report problems and evidence, but do not patch code unless the user asks for fixes.

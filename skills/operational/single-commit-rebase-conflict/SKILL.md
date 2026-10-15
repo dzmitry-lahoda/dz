@@ -19,6 +19,8 @@ Desired input domain, features, and product analysis codebase and semanticxs of 
 
 ##  Prepare
 
+- use `difftastic` if it has relevant language
+  - warn if difftastic fails or not available
 - create work tree
 - Validate that local lints pass on the branch, if not - stop.
 - Check each commit in base and branch as they diverged.

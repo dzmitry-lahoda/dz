@@ -1,4 +1,13 @@
 
+## Effort
+
+Allowed high+.
+
+Skip on medium or lower
+
+## Overview
+
+
 Verify it was done.
 
 In the end of each agent session report what you was asked to do,

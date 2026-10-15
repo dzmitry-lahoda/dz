@@ -1,5 +1,3 @@
-
-
 https://github.com/luckys/agent-skills/tree/main/skills/boost - search for relevant skills, context, lifecycle, need to abstract to nix.
 
 

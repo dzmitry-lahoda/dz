@@ -23,14 +23,6 @@ Map commont flow setup to discover installed skills which are relevant for this 
 
 Use fp best practices, 
 
-- avoid late binding 
+- search this repo for review 
 
 - control-code-quality-skill
-
-# Skills found in this session
-                    |
-| Category theory                     | [categories-functors](https://github.com/vibeeval/vibecosystem/tree/main/skills/math/category-theory/categories-functors)         | Category laws, functor laws, and Lean/Mathlib proof guidance.                                                                                |
-| Category theory                     | [natural-transformations](https://github.com/vibeeval/vibecosystem/tree/main/skills/math/category-theory/natural-transformations) | Naturality, natural transformations, and Lean-oriented proof guidance.                                                                       |
-| Category theory                     | [limits-colimits](https://github.com/vibeeval/vibecosystem/tree/main/skills/math/category-theory/limits-colimits)                 | Universal constructions, limits, colimits, and Lean-oriented checks.                                                                         |
-| Homotopy type theory                | [segal-types](https://github.com/plurigrid/asi/tree/main/skills/segal-types)                                                      | Synthetic ∞-categories and composition up to homotopy; experimental material with Rzk sketches.                                              |
-| Homotopy type theory                | [yoneda-directed](https://github.com/plurigrid/asi/tree/main/skills/yoneda-directed)                                              | Directed Yoneda and directed path induction; experimental material with Rzk sketches.                                                        |

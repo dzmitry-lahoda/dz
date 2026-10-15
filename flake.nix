@@ -150,9 +150,12 @@
             pkgs.secretspec
             pkgs.jdk17_headless
             pkgs.nodejs_22
+            pkgs.lean4
+            pkgs.tlaplus
             pkgs.quint
             unstablePkgs.squawk
             pkgs.git
+            pkgs.difftastic
             pkgs.ripgrep
             pkgs.jujutsu
             pkgs.eza

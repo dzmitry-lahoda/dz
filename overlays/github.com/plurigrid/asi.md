@@ -1,0 +1,1 @@
+seems usable after i rearn relevant math, can use such abstract skills

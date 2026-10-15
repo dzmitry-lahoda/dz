@@ -182,8 +182,8 @@ Load files of context from previous steps to enhace each review step.
 
 #### State and Temporal Consistency
 
-- **Trigger:** Changes to persisted state, lifecycle transitions, derived caches/indexes, receipts/history, asynchronous queues or publication ordering; or an explicit request to investigate state desynchronization.
-- **Skill:** Resolve `persistent-state-artifacts` from installed or local skill directories.
+- **Trigger:** Changes to persisted state, lifecycle transitions, distributed state machines,derived caches/indexes, async request/response, event log, asynchronous queues or publication ordering, inteprocess syncronizaiton; or an explicit request to investigate state desynchronization.
+- **Skill:** Resolve `persistent-state-artifacts` and `asyncronous-behaviour-review` from installed or local skill directories.
 - **Focus:** Inventory authoritative and derived state; define invariants at explicit commit/publication boundaries; trace missed updates, partial batches, stale callbacks, progress watermarks and replay. Compare matching versions and separate recoverable lag from persistent missing updates. Deduplicate known findings and label pre-existing issues separately.
 - **Output:** `state-consistency-review.md`, with state/invariant tables, temporal witnesses, source anchors, recovery limits and executed versus proposed checks. Reuse the run's setup and completed context; independent canonical, persistence and queue passes may run in parallel when authorized.
 

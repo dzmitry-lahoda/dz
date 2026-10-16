@@ -4,8 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    codegraph.url = "github:dzmitry-lahoda-forks/codegraph/codex/add-nix-flake";
-    codegraph.inputs.nixpkgs.follows = "nixpkgs";
     trailmark.url = "github:trailofbits/trailmark/pull/75/head";
     agent-skills = {
       url = "github:Kyure-A/agent-skills-nix";
@@ -54,10 +52,11 @@
     mewt.url = "github:trailofbits/mewt/main";
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs-unstable, codegraph, trailmark, mewt, ... }:
+  outputs = inputs@{ nixpkgs, nixpkgs-unstable, trailmark, mewt, ... }:
     let
       supportedSystems = [
         "aarch64-darwin"
+        "x86_64-linux"
       ];
 
       agentLib = inputs.agent-skills.lib.agent-skills;
@@ -141,7 +140,6 @@
           unstablePkgs = import nixpkgs-unstable { inherit system; };
           commonPackages = [
             pkgs.bashInteractive
-            codegraph.packages.${system}.default
             pkgs.codeql
             pkgs.postgresql
             trailmark.packages.${system}.default

@@ -21,3 +21,4 @@ Any skill loaded from this repo is written a way to work this way
 - declarative configurations over interactive setups
 - category theory, homotopy, sets, derivative, integrals, probility, discrete math over english
 - abstract and aggregation but practical models over concretes
+- lack of skills is human decision, notification about lack is model work

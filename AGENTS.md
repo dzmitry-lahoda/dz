@@ -1,1 +1,1 @@
-[Agents skill](./skills/agentic/setup/SKILL.md)
+skills/agentic/setup/SKILL.md

@@ -2,6 +2,7 @@
 { inputs }:
 let
   writing = {
+    eli5 = { from = "eli5"; path = "skills/eli5"; };
     asd-ste100-skill = { from = "asd-ste100-skill"; path = "."; };
     i-have-adhd = { from = "i-have-adhd"; path = "skills/i-have-adhd"; };
     caveman = { from = "caveman"; path = "skills/caveman"; };
@@ -41,7 +42,9 @@ in
     asd-ste100-skill.path = inputs.asd-ste100-skill;
     awesome-copilot.path = inputs.awesome-copilot;
     caveman.path = inputs.caveman;
+    cloudflare-security-audit.path = inputs.cloudflare-security-audit;
     dba-review.path = inputs.dba-review;
+    eli5.path = inputs.eli5;
     i-have-adhd.path = inputs.i-have-adhd;
     luckys-agent-skills.path = inputs.luckys-agent-skills;
     trailofbits-skills.path = inputs.trailofbits-skills;
@@ -62,6 +65,7 @@ in
     mermaid-to-proverif = { from = "trailofbits-skills"; path = "plugins/trailmark/skills/mermaid-to-proverif"; };
     rest-api-best-practices = { from = "luckys-agent-skills"; path = "skills/rest-api-best-practices"; };
     rust-review = { from = "trailofbits-skills"; path = "plugins/rust-review/skills/rust-review"; };
+    security-audit = { from = "cloudflare-security-audit"; path = "skills/security-audit"; };
     slicing-code-context = { from = "trailofbits-skills"; path = "plugins/trailmark/skills/slicing-code-context"; };
     spec-to-code-compliance = { from = "trailofbits-skills"; path = "plugins/spec-to-code-compliance/skills/spec-to-code-compliance"; };
     supply-chain-risk-auditor = { from = "trailofbits-skills"; path = "plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor"; };

@@ -25,8 +25,16 @@
       url = "github:JuliusBrussee/caveman/15581d14007fd01fb3f132016741962f34936ca2";
       flake = false;
     };
+    cloudflare-security-audit = {
+      url = "github:cloudflare/security-audit-skill/c1c8a8c1471069fb0e188eeaff69b8e8db6564a8";
+      flake = false;
+    };
     dba-review = {
       url = "github:dhdtech/dba-review/a43f0a60da6283ef8c8838d32e36d7a50b9ace59";
+      flake = false;
+    };
+    eli5 = {
+      url = "github:DreambigOu/ELI5/a766623b062331fdde53467001379b4ddf3acc2f";
       flake = false;
     };
     i-have-adhd = {

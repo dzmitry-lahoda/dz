@@ -51,9 +51,19 @@ Progress may be reported in chat, but durable review state must be written to fi
 
 Record the user's current failure policy in `verification-notes.md` and propagate later changes to active agents. A later authorization to recover supersedes an earlier stop instruction.
 
-- In stop-on-first-failure mode, stop at the first infrastructure, dependency, installation, or configuration failure. Record the failed command or unmet requirement, cancel dependent work and active review execution with the existing harness tools, and finish reporting. Do not retry, install, switch environments, or silently skip the failed pass. Independently authorized local skill repair may continue without resuming the review.
+- In stop-on-first-failure mode, stop execution at the first infrastructure, dependency, installation, or configuration failure. Record the failed command or unmet requirement and cancel dependent work and active review execution with the existing harness tools. Follow the interactive recovery procedure below before ending the run. Do not retry, install, switch environments, substitute a skill, or skip a failed pass without existing or newly granted authorization. Independently authorized local skill repair may continue without resuming the review.
 - When recovery is authorized, record each failure, the evidence for a bounded recovery, the retry, and its outcome. Use existing tools and declared configuration first. Do not repeat an unchanged failing command or install tools unless the current authorization allows it. Required unrecovered passes remain blocked; unrelated authorized passes may continue with their limits recorded.
 - Classify commands as passed, candidate issue reproduced, or blocked by environment/tooling. A failed local build is not a PR finding without evidence tying the failure to the reviewed change. Missing optional tooling is not a failed required pass unless that pass was selected.
+
+#### Interactive recovery
+
+A run is interactive when the user can receive and answer a question in the current session; worker shells do not each need a TTY.
+
+- If user action or a decision could unblock the run, ask before issuing a final blocked report, unless the user explicitly requested immediate termination without questions. State the failure, affected work, and the concrete choices: repair the prerequisite, authorize a bounded recovery or substitution, proceed with a named omission and its limits, or stop. Offer only choices applicable to the failure. Cite the instruction requiring authorization when it comes from a skill.
+- Reuse recovery authorization already granted by the user, including bounded retries for external failures. Ask only for the additional decision needed; do not ask the user to approve the same action again.
+- While the answer is pending, keep dependent execution stopped and record `awaiting user decision` in the run artifacts. An asynchronous question returning immediately, a preselected option, or elapsed time is not an answer. Independently authorized local skill repair may continue.
+- After an explicit answer, record the decision and its scope in `verification-notes.md`, update the plan, propagate the current policy to workers, and resume only authorized work from the last completed dependency. A waiver for one pass does not waive later failures or expand execution permissions.
+- If the user chooses to stop, the run is unattended, no question channel is available, or the run deadline expires before an answer, finish reporting the blocker and completed work. Identify any unanswered recovery question; never report the review as complete.
 
 ### Environment
 

@@ -1,3 +1,7 @@
+
+### Think
+
+
 https://github.com/luckys/agent-skills/tree/main/skills/boost - search for relevant skills, context, lifecycle, need to abstract to nix.
 
 
@@ -19,6 +23,10 @@ https://github.com/NatureMetrics/coding-agent-specification/blob/main/skills/gri
 https://github.com/NatureMetrics/coding-agent-specification/blob/main/skills/mutation-testing/SKILL.md - stolen from where, is it trail of bits
 
 https://github.com/NatureMetrics/coding-agent-specification/blob/main/skills/security-and-hardening/SKILL.md - seems i need OWASP, so may be better way?
+
+https://github.com/obra/superpowers/blob/main/skills/subagent-driven-development/SKILL.md - nice to try
+
+https://github.com/obra/superpowers/blob/main/skills/systematic-debugging/SKILL.md  - nice to try/
 
 ### Rejected
 

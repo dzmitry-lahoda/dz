@@ -1,14 +1,13 @@
 # Prompt template
-
-Run `implementatation-review` orchestration on https://github.com/n1xyz/proton/pull/3413.
-I ask to allow delegation and parallel flow.
-Stop on first infra, dependency, install, or configuration failure.
-Allow me to resolve issues or agree to proceed with known hiccup.
-Run with high+ thinking effort on frontier model.
-I allow total run under 1 hours.
-And subruns per agent to be 15 minutes.
-In case of external failures (like networking failures), retrun several times as needed.nix
-
+ Run `implementatation-review` orchestration on https://github.com/n1xyz/proton/pull/3500. Use https://github.com/n1xyz/proton/pull/3499 as
+  SPEC/docs/requiremnts (and links from it).
+  I ask to allow delegation and parallel flow.
+  Stop on first infra, dependency, install, or configuration failure.
+  Allow me to resolve issues or agree to proceed with known hiccup.
+  Run with high+ thinking effort on frontier model.
+  I allow total run under 1 hours.
+  And subruns per agent to be 15 minutes.
+  In case of external failures (like networking failures), retrun several times as needed.
 
 # How to use
 

@@ -45,6 +45,10 @@
       url = "github:luckys/agent-skills/8a36591aa9cc75cb5eabe73178b846a343c1fedf";
       flake = false;
     };
+    tomzx-agents = {
+      url = "github:tomzx/agents/c2dd6af25f2205a73e087ecd8b447a0bae850f84";
+      flake = false;
+    };
     trailofbits-skills = {
       url = "github:trailofbits/skills/d3323cefbcf645678b8dc481de204b02ad3d02dc";
       flake = false;

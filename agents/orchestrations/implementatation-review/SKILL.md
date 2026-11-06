@@ -124,6 +124,7 @@ Produce one concise code context artifact that all focused review passes, verifi
 - Load and use `trailmark-structural`
 - Record the changed entry points, affected call paths, important invariants, related tests, and any unresolved context gaps in the artifact.
 - Output all artifacts into files.
+- Find all state machines in solution and report on them as is.
 
 ### 5. Code type and domain
 
@@ -192,17 +193,24 @@ Load files of context from previous steps to enhace each review step.
 
 #### State and Temporal Consistency
 
-- **Trigger:** Changes to persisted state, lifecycle transitions, distributed state machines,derived caches/indexes, async request/response, event log, asynchronous queues or publication ordering, inteprocess syncronizaiton; or an explicit request to investigate state desynchronization.
+- **Trigger:** Changes to persisted state, lifecycle transitions, distributed state machines,derived caches/indexes, async request/response, event log, asynchronous queues or publication ordering, inteprocess syncronizaiton; or an explicit request to investigate state desynchronization. Deep review of state machine and their lifecycle using relevant lifecycle skill.
 - **Skill:** Resolve `persistent-state-artifacts` and `asyncronous-behaviour-review` from installed or local skill directories.
 - **Focus:** Inventory authoritative and derived state; define invariants at explicit commit/publication boundaries; trace missed updates, partial batches, stale callbacks, progress watermarks and replay. Compare matching versions and separate recoverable lag from persistent missing updates. Deduplicate known findings and label pre-existing issues separately.
 - **Output:** `state-consistency-review.md`, with state/invariant tables, temporal witnesses, source anchors, recovery limits and executed versus proposed checks. Reuse the run's setup and completed context; independent canonical, persistence and queue passes may run in parallel when authorized.
-
-### Product Engineering
+ 
+#### Product Engineering
 
 - reads all md files in docs/** and all README.md files in directories
 - finds possible bugs of interaction of this feature added or modified in this PR with all others 
 - Rads and depends on `code-domain-identification.md` output.
 - Uses the domain and component information to guide focused review passes.
+
+
+#### Review mathematicsite
+
+If changes includ non trivial math (integer and iterative divisions, floating point roundings and usage of floating point).
+
+Check one off, rounding, loss, out of range conditions.
 
 #### Domain Guidelines Advisor
 

@@ -1,5 +1,5 @@
 # Prompt template
- Run `implementatation-review` orchestration on https://github.com/n1xyz/proton/pull/3500. Use https://github.com/n1xyz/proton/pull/3499 as
+ Run `implementatation-review` orchestration on https://github.com/n1xyz/proton/pull/3229. 
   SPEC/docs/requiremnts (and links from it).
   I ask to allow delegation and parallel flow.
   Stop on first infra, dependency, install, or configuration failure.

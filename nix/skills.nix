@@ -27,6 +27,7 @@ let
     postgresql-optimization = { from = "awesome-copilot"; path = "skills/postgresql-optimization"; };
   };
   operational = {
+    review-lifecycle = { from = "tomzx-agents"; path = "skills/review-lifecycle"; };
     modern-python = { from = "trailofbits-skills"; path = "plugins/modern-python/skills/modern-python"; };
     openai-gh-fix-ci = { from = "trailofbits-skills-curated"; path = "plugins/openai-gh-fix-ci/skills/openai-gh-fix-ci"; };
     planning-with-files = { from = "trailofbits-skills-curated"; path = "plugins/planning-with-files/skills/planning-with-files"; };
@@ -47,6 +48,7 @@ in
     eli5.path = inputs.eli5;
     i-have-adhd.path = inputs.i-have-adhd;
     luckys-agent-skills.path = inputs.luckys-agent-skills;
+    tomzx-agents.path = inputs.tomzx-agents;
     trailofbits-skills.path = inputs.trailofbits-skills;
     trailofbits-skills-curated.path = inputs.trailofbits-skills-curated;
     wshobson-agents.path = inputs.wshobson-agents;

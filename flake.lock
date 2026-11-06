@@ -361,6 +361,7 @@
         "mewt": "mewt",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "tomzx-agents": "tomzx-agents",
         "trailmark": "trailmark",
         "trailofbits-skills": "trailofbits-skills",
         "trailofbits-skills-curated": "trailofbits-skills-curated",
@@ -396,6 +397,23 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "tomzx-agents": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1793830841,
+        "narHash": "sha256-pivlnyO7ud9CFwldGzTZd5q8Ov3RNElhUUCGwutS/fI=",
+        "owner": "tomzx",
+        "repo": "agents",
+        "rev": "c2dd6af25f2205a73e087ecd8b447a0bae850f84",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tomzx",
+        "repo": "agents",
+        "rev": "c2dd6af25f2205a73e087ecd8b447a0bae850f84",
         "type": "github"
       }
     },

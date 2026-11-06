@@ -172,6 +172,9 @@
             mewt.packages.${system}.default
             unstablePkgs.bun
             unstablePkgs.apm-cli
+            unstablePkgs.slack-cli
+            unstablePkgs.ast-grep
+            unstablePkgs.google-cloud-sdk
           ];
           mkAgentShell = target: pkgs.mkShell {
             shellHook = "${mkSkillInstaller { inherit pkgs; inherit target; }}/bin/skills-install-${target}";

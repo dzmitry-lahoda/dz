@@ -1,6 +1,16 @@
+---
+name: review-plan-spec
+description: Review a specification or plan by running implementation planning and branching at underspecified decisions instead of silently assuming defaults.
+---
 
+# Review plan and spec via decision forking
 
+Substantial logic—especially multi-step, path-dependent state machines—cannot be generated or patched reliably from an incomplete plan; post-hoc fixes to a broken state machine degrade into hacks.
 
-[12:39 PM]dzmitry-lahoda as in one of comments to firsts finding, i believe if AI cannot plan well, it cannot generate, and if it is substantial neither I can code manually too (multi step path dependant state machine), without bugs. and cracking our bugs out of bad state machine in code is hard (ALL ai fixes will be just hacks)
-[1:08 PM]dzmitry-lahoda btw, skill is based on dima idea. you ask to impl. but on each decision, pick biggest solution forks which occupy 2 3 and go with that. on each decision span forks, and record lacking. level 2 up to 10 forks. and report back unresolved
-[1:08 PM]basically start plancode, an dinstead of silently producing shit, fork each time
+## Procedure
+
+1. Start implementation planning (`plancode`) from the spec or plan. Do not write production code or silently guess missing rules.
+2. At each ambiguous design or state-transition decision, split into the 2–3 dominant solution forks covering the main solution space.
+3. Expand forks up to depth 2, capped at 10 total forks.
+4. At every fork, record what the spec/plan lacks (missing invariants, undefined transitions, path dependencies, or boundary cases).
+5. Stop before code generation and report the fork tree and all unresolved gaps.

@@ -18,6 +18,8 @@ Use this skill to turn an ambiguous review request into a structured code review
 
 This skill may identify pre-existing issues when the reviewed change makes them worse, exposes them through a new path, or turns them into a regression.
 
+If expected or desired behaviour of change is not aligned, not documented, not consistent. 
+
 ## When not to use
 
 - General code quality review

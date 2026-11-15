@@ -4,7 +4,16 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    trailmark.url = "github:trailofbits/trailmark/pull/75/head";
+    trailmark = {
+      # url = "github:trailofbits/trailmark/main";
+url = "github:trailofbits/trailmark/pull/75/head";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    necessist = {
+      url = "github:trailofbits/necessist/pull/2005/head";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     agent-skills = {
       url = "github:Kyure-A/agent-skills-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -64,7 +73,7 @@
     mewt.url = "github:trailofbits/mewt/main";
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs-unstable, trailmark, mewt, ... }:
+  outputs = inputs@{ nixpkgs, nixpkgs-unstable, trailmark, necessist, mewt, ... }:
     let
       supportedSystems = [
         "aarch64-darwin"
@@ -155,6 +164,7 @@
             pkgs.codeql
             pkgs.postgresql
             trailmark.packages.${system}.default
+            necessist.packages.${system}.default
             pkgs.uv
             pkgs.sqruff
             pkgs.secretspec

@@ -31,7 +31,7 @@ url = "github:trailofbits/trailmark/pull/75/head";
       flake = false;
     };
     caveman = {
-      url = "github:JuliusBrussee/caveman/15581d14007fd01fb3f132016741962f34936ca2";
+      url = "github:JuliusBrussee/caveman/b4ee71d557d96e3cbc14f88fa6e953a1362865f5";
       flake = false;
     };
     cloudflare-security-audit = {
@@ -59,7 +59,7 @@ url = "github:trailofbits/trailmark/pull/75/head";
       flake = false;
     };
     trailofbits-skills = {
-      url = "github:trailofbits/skills/d3323cefbcf645678b8dc481de204b02ad3d02dc";
+      url = "github:trailofbits/skills/149d7b21f4067765b82e67029730b42d228ef4b4";
       flake = false;
     };
     trailofbits-skills-curated = {

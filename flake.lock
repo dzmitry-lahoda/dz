@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792594212,
-        "narHash": "sha256-XWx3R/AIeYdyZ3guuZVNqirEUPPpehICrIRV3VabR+U=",
+        "lastModified": 1794456227,
+        "narHash": "sha256-qu7S1arVl+Q6H/yZhJ2VdeDY/kBxY8mK8m6U49M0alk=",
         "owner": "Kyure-A",
         "repo": "agent-skills-nix",
-        "rev": "f48aa227f3d157ae3abda12cd9c4ab867f400419",
+        "rev": "93a02cb60eda167de8c5baa085e4a2bcfc71b885",
         "type": "github"
       },
       "original": {
@@ -74,17 +74,17 @@
     "caveman": {
       "flake": false,
       "locked": {
-        "lastModified": 1788769183,
-        "narHash": "sha256-GuCK3oy0DsMOQq7gHjIY/aeaukJcTvelfg+tp7R7Du4=",
+        "lastModified": 1794590119,
+        "narHash": "sha256-HcNc+iyIL/K4JOBBsJAS2eh0vcpW3CwL5CQMqY0LMh0=",
         "owner": "JuliusBrussee",
         "repo": "caveman",
-        "rev": "15581d14007fd01fb3f132016741962f34936ca2",
+        "rev": "b4ee71d557d96e3cbc14f88fa6e953a1362865f5",
         "type": "github"
       },
       "original": {
         "owner": "JuliusBrussee",
         "repo": "caveman",
-        "rev": "15581d14007fd01fb3f132016741962f34936ca2",
+        "rev": "b4ee71d557d96e3cbc14f88fa6e953a1362865f5",
         "type": "github"
       }
     },
@@ -218,11 +218,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1781818948,
-        "narHash": "sha256-QdOYy8PIbJ/l7pCNWeIy0NJrPMyqToOFseGcwWN7kbE=",
+        "lastModified": 1790370933,
+        "narHash": "sha256-oRmf0g4jM2V7lvoEgLfoTEW9dYxo2JUuDqP4D5UCVdw=",
         "owner": "trailofbits",
         "repo": "mewt",
-        "rev": "53b5d0798b5db725fafe6ca282cbf0d886b0162c",
+        "rev": "e96e71969ae9b9d3ef7562ae5a3a60de6050c0d0",
         "type": "github"
       },
       "original": {
@@ -472,17 +472,17 @@
     "trailofbits-skills": {
       "flake": false,
       "locked": {
-        "lastModified": 1788371049,
-        "narHash": "sha256-gkNXbN3CwrQ0tRmD9JTDeb+uPlSkGUpUi8Pan4EAWlw=",
+        "lastModified": 1794505727,
+        "narHash": "sha256-8NBnk9sFW1IMkd+qmTvLKweh3CkeJaALEZBLs3GaxlM=",
         "owner": "trailofbits",
         "repo": "skills",
-        "rev": "d3323cefbcf645678b8dc481de204b02ad3d02dc",
+        "rev": "149d7b21f4067765b82e67029730b42d228ef4b4",
         "type": "github"
       },
       "original": {
         "owner": "trailofbits",
         "repo": "skills",
-        "rev": "d3323cefbcf645678b8dc481de204b02ad3d02dc",
+        "rev": "149d7b21f4067765b82e67029730b42d228ef4b4",
         "type": "github"
       }
     },
